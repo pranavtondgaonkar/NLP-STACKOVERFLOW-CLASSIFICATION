@@ -1,0 +1,12 @@
+
+tqdm
+dvc
+dvc[s3]
+pandas
+numpy
+PyYAML
+scikit-learn
+Scipy
+rich
+
+# -e . 
