@@ -6,7 +6,21 @@ with open("README.md", "r", encoding="utf-8") as f:
 REPO_NAME = "NLP-STACKOVERFLOW-CLASSIFICATION"
 AUTHOR_USER_NAME = "pranavrelds"
 SRC_REPO = "src"
-LIST_OF_REQUIREMENTS = ['tqdm', 'dvc[s3]', 'pandas', 'numpy', 'PyYAML', 'scikit-learn', 'Scipy', 'rich']
+
+def get_requirements_list() -> List[str]:
+    """
+    Description: This function is going to return list of requirement
+    mention in requirements.txt file
+    return This function is going to return a list which contain name
+    of libraries mentioned in requirements.txt file
+    """
+    with open(REQUIREMENT_FILE_NAME) as requirement_file:
+        requirement_list = requirement_file.readlines()
+        requirement_list = [requirement_name.replace("\n", "") for requirement_name in requirement_list]
+        if HYPHEN_E_DOT in requirement_list:
+            requirement_list.remove(HYPHEN_E_DOT)
+        return requirement_list
+
 
 
 setup(
@@ -17,9 +31,9 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
-    author_email="sunny.c17hawke@gmail.com",
+    author_email="pranavrelds@gmail.com",
     packages=[SRC_REPO],
     license="MIT",
     python_requires=">=3.6",
-    install_requires=LIST_OF_REQUIREMENTS
+    install_requires=get_requirements_list()
 )
