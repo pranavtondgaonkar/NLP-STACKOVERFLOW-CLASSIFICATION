@@ -1,11 +1,16 @@
-from setuptools import setup
+from setuptools import setup,find_packages
+from typing import List
 
-with open("README.md", "r", encoding="utf-8") as f:
-    long_description = f.read()
- 
+#Declaring variables for setup functions
+PROJECT_NAME= "NLP-STACKOVERFLOW-CLASSIFICATION"
+VERSION="0.0.1"
+AUTHOR="Pranav Tondgaonkar"
 REPO_NAME = "NLP-STACKOVERFLOW-CLASSIFICATION"
 AUTHOR_USER_NAME = "pranavrelds"
-SRC_REPO = "src"
+DESRCIPTION="A classification solutions for stackoverflow questions for python"
+REQUIREMENT_FILE_NAME="requirements.txt"
+HYPHEN_E_DOT = "-e ."
+
 
 def get_requirements_list() -> List[str]:
     """
@@ -24,16 +29,11 @@ def get_requirements_list() -> List[str]:
 
 
 setup(
-    name=SRC_REPO,
-    version="0.0.1",
-    author=AUTHOR_USER_NAME,
-    description="A classification solutions for stackoverflow questions for python",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
-    author_email="pranavrelds@gmail.com",
-    packages=[SRC_REPO],
-    license="MIT",
-    python_requires=">=3.6",
-    install_requires=get_requirements_list()
+name=PROJECT_NAME,
+version=VERSION,
+author=AUTHOR,
+description=DESRCIPTION,
+packages=find_packages(), 
+install_requires=get_requirements_list(),
+url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}"
 )

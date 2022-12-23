@@ -5,11 +5,13 @@ from src.utils.utils import read_yaml, create_directories
 import urllib.request as request
 from configs.logging import logging
 
+
 STAGE = "STAGE-01 get data from S3 bucket" 
+
 
 def main(config_path):
     config = read_yaml(config_path)
-    source_data_url = config["source_data_url"]
+    source_data_url = SOURCE_DATA_URL
     local_data_dir = config["source_download_dir"]["data_dir"]
     data_filename = config["source_download_dir"]["data_file"]
 
