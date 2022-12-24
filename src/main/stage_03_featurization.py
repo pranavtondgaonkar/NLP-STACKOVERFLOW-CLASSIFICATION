@@ -1,6 +1,5 @@
 import argparse
 import os
-import shutil
 import logging
 import numpy as np
 from src.utils.featurize import save_matrix

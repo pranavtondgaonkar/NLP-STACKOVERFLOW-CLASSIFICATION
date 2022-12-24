@@ -5,3 +5,8 @@ prepare_data:
 featurize:
   max_features: 2500
   ngrams: 2
+
+train:
+  seed: 101
+  n_est: 120
+  min_split: 16
