@@ -1,9 +1,11 @@
 artifacts:
   ARTIFACTS_DIR: artifacts
-  PREPARED_DATA: prepared
+  PREPARED_DATA: prepared_data
   TRAIN_DATA: train.tsv
   TEST_DATA: test.tsv
 
 source_download_dir:
   data_dir: data
   data_file: data.xml
+
+encoding: utf8
