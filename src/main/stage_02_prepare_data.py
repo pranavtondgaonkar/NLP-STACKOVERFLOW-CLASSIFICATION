@@ -4,10 +4,9 @@ import random
 import logging
 from src.utils.data_management import process_posts
 from src.utils.utils import read_yaml, create_directories
-import urllib.request as request
 from configs.logging import logging
 
-STAGE = "STAGE-02 prepare the data " 
+STAGE = "STAGE-02 prepare the data" 
 
 def main(config_path, params_path):
     config = read_yaml(config_path)

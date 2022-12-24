@@ -2,15 +2,16 @@ import argparse
 import os
 import shutil
 import logging
-from src.utils.utils import read_yaml, create_directories, get_df
 import numpy as np
+from src.utils.featurize import save_matrix
+from src.utils.utils import read_yaml, create_directories, get_df
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from configs.logging import logging
 
 STAGE = "STAGE-03 Featurization" 
 
 def main(config_path, params_path):
-    ## read config files
+
     config = read_yaml(config_path)
     params = read_yaml(params_path)
 
@@ -26,8 +27,8 @@ def main(config_path, params_path):
     featurized_test_data_path = os.path.join(featurized_data_dir_path, artifacts["FEATURIZED_TEST_DATA"])
 
     df_train = get_df(train_data_path)
-    train_words = np.array(df_train.text.str.lower().values.astype("U"))
 
+    train_words = np.array(df_train.text.str.lower().values.astype("U")) 
     max_features = params["featurize"]["max_features"]
     ngrams = params["featurize"]["ngrams"]
 
@@ -44,7 +45,7 @@ def main(config_path, params_path):
     save_matrix(df_train, train_words_tfidf_matrix, featurized_train_data_path)
 
     df_test = get_df(test_data_path)
-    test_words = np.array(df_test.text.str.lower().values.astype("U")) ## << U1000
+    test_words = np.array(df_test.text.str.lower().values.astype("U")) 
 
     test_words_binary_matrix = bag_of_words.transform(test_words)
 
