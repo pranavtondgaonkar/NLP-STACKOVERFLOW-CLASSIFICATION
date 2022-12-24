@@ -24,7 +24,7 @@ def main(config_path):
     model = joblib.load(model_path)
     matrix = joblib.load(featurized_test_data_path)
 
-    labels = np.squeeze(matrix[:, 1].toarray())git
+    labels = np.squeeze(matrix[:, 1].toarray())
     X = matrix[:,2:]
 
     prediction_by_class = model.predict_proba(X)
