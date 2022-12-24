@@ -34,6 +34,6 @@ version=VERSION,
 author=AUTHOR,
 description=DESRCIPTION,
 packages=find_packages(), 
-install_requires=get_requirements_list(),
+install_requires=[],
 url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}"
 )

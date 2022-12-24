@@ -8,3 +8,20 @@ stages:
       - configs/logging.py
     outs:
       - data/data.xml
+
+  prepare_data:
+    cmd: python src/main/stage_02_prepare_data.py --config=configs/config.yaml --params=params.yaml
+    deps:
+      - src/main/stage_02_prepare_data.py
+      - data/data.xml
+      - src/utils/utils.py
+      - src/utils/data_management.py
+      - configs/config.yaml
+      - params.yaml
+      - configs/logging.py
+    params:
+      - prepare_data.seed
+      - prepare_data.split  
+    outs:
+      - artifacts/prepared_data/train.tsv
+      - artifacts/prepared_data/test.tsv
