@@ -4,10 +4,11 @@ import logging
 from src.utils.utils import read_yaml, create_directories
 import urllib.request as request
 from configs.logging import logging
+from dotenv import load_dotenv
+load_dotenv()
 
-
+SOURCE_DATA_URL = os.environ['SOURCE_DATA_URL']
 STAGE = "STAGE-01 get data from S3 bucket" 
-
 
 def main(config_path):
     config = read_yaml(config_path)
