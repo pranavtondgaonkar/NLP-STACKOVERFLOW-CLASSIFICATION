@@ -8,5 +8,6 @@ PyYAML
 scikit-learn
 Scipy
 rich
+python-dotenv
 
 -e . 
