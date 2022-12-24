@@ -1,3 +1,7 @@
 prepare_data:
   split: 0.3
   seed: 42
+
+featurize:
+  max_features: 2500
+  ngrams: 2
