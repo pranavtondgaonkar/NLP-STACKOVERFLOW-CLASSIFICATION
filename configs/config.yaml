@@ -14,3 +14,10 @@ source_download_dir:
   data_file: data.xml
 
 encoding: utf8
+
+plots:
+  PRC: prc.json
+  ROC: roc.json
+
+metrics:
+  SCORES: scores.json
