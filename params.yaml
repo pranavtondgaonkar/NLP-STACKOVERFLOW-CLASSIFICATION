@@ -1,0 +1,3 @@
+prepare_data:
+  split: 0.3
+  seed: 42
