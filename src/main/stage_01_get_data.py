@@ -1,6 +1,5 @@
 import argparse
 import os
-import shutil
 import logging
 from src.utils.utils import read_yaml, create_directories
 import urllib.request as request
@@ -20,8 +19,7 @@ def main(config_path):
     create_directories([local_data_dir])    
     local_data_filepath = os.path.join(local_data_dir, data_filename)
     logging.info("Download started")
-    # filename, headers = request.urlretrieve(source_data_url, local_data_filepath)
-    shutil.copy(source_data_url, local_data_filepath)
+    filename, headers = request.urlretrieve(source_data_url, local_data_filepath)
     logging.info(f"Download completed, file present at {local_data_filepath}")
 
 
