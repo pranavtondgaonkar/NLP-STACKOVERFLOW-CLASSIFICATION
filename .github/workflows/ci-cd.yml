@@ -24,3 +24,4 @@ jobs:
           cat scores.json >> report.md
           dvc metrics show >> report.md
           cml-send-comment report.md
+
