@@ -15,6 +15,7 @@ jobs:
       - name: cml-run
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
+          SOURCE_DATA_URL: ${{ secrets.SOURCE_DATA_URL }}
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
